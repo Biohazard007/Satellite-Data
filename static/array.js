@@ -1,7 +1,6 @@
 
-
+/*--This is the array loop for our images--*/
 /*------------------------------------*/
-
 const images = new Array(22).fill().map((item,index)=>{
     return `/static/${2000+index}.PNG`
 })
@@ -18,3 +17,6 @@ window.onload = function(){
             document.getElementById('satelliteImage').src = images[currentIndex]
     })
 }
+
+/*--This is the array loop for our leaflet--*/
+/*------------------------------------*/

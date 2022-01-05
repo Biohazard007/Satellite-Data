@@ -91,10 +91,10 @@
         </li>
       </ul>
     </div>
-    <div class="container w-75" style="  height: auto; float: right;" >
+    <div class="container w-75" style="height: 100%; float: right;" >
       <button id="previous" class="btn btn btn-dark" style="height:50px; width:60px; position: absolute; top:50vh; ">-</button>
       <button id="next" class="btn btn btn-dark" style="height:50px; width:60px; position: absolute; top:50vh; left: 95%;">+</button>
-      <button id="zoomIn" class="btn btn-light" style="height:30px; width:30px; position:absolute; top:10vh;">+</button>
+      <button id="zoomIn" class="btn btn-light" style="height:30px; width:30px; position:absolute; top:10.3vh;">+</button>
       <button id="zoomOut" class="btn btn-light"style="height:30px; width:30px; position:absolute; top:14.5vh;">-</button>
       <button id="Home" class="btn btn-light" style="height:30px; width:30px; position:absolute; top:22vh;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
         <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
@@ -102,8 +102,16 @@
       <button id="Area" class="btn btn-light"style="height:30px; width:30px; position:absolute; top:26.5vh;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-fill" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411z"/>
 </svg></button>
-      <div id="search" class> <input id="input" placeholder="Search..." /> <button id="button"><i class="fa fa-search"></i></button>
-      </div>
+      <div class="input-group" style="position:absolute;">
+        <div class="form-outline">
+          <input type="search" id="form1" class="form-control" />
+        </div>
+      <button type="button" class="btn btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg>
+      </button>
+    </div>
       <img src="static/Sample.jpg" id="satelliteImage" class="img-fluid " alt="Responsive image">
     </div>
 
