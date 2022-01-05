@@ -14,11 +14,7 @@ window.onload = function(){
                 document.getElementById('message').innerText = images[currentIndex].replace('/static/','')
     })
     document.getElementById('next').addEventListener('click',function(){
-
-
                   currentIndex = (currentIndex +1)% images.length
-
             document.getElementById('satelliteImage').src = images[currentIndex]
-
     })
 }
