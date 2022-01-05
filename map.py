@@ -7,3 +7,5 @@ m= folium.Map(location=[27.6557582, 85.3283925], zoom_start=12)
 m.save('map.html')
 
 
+
+
