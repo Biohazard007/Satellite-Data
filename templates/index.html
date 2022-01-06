@@ -112,13 +112,17 @@
           </svg>
         </button>
       </div>
-      <select class="form-select" style="width:140px; position: absolute; margin-left:40px; top:115px; ">
+      <select class="form-select" style="width:160px; position: absolute; margin-left:40px; top:115px; ">
         <option selected placeholder="Choose filter">Choose filter</option>
-        <option value="1">NDVI</option>
-        <option value="2">NIR</option>
-        <option value="3">IR</option>
+        <option value="1" id="ndvi"> NDVI </option>
+        <option value="2" id="nir"> NIR </option>
+        <option value="3" id="ir"> IR </option>
       </select>
-      <img src="static/Sample.jpg" id="satelliteImage" class="img-fluid " alt="Responsive image">
+      <select class="form-select" style="width:70px; position:absolute; margin-left:210px; top:115px; ">
+        <option selected id="30-meter">30 M</option>
+        <option value="1" id="10-meter">10 M</option>
+      </select>
+      <img src="static/2000.png" id="satelliteImage" class="img-fluid " alt="Responsive image">
     </div>
 
 </body>
