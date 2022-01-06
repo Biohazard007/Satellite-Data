@@ -7,12 +7,17 @@ def send_js(path):
     return send_from_directory(path)
 
 @app.route("/")
-def hello_world():
-    return render_template('index.html')
+def signin():
+    return render_template('signin.html')
 
-@app.route("/about")
-def hello():
-    return render_template('example.html')
+@app.route("/signup")
+def signup():
+    return render_template('signup.html')
+
+
+@app.route("/index")
+def index():
+    return render_template('index.html')
 
  
 
