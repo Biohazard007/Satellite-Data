@@ -1,7 +1,7 @@
 import folium
 
 # create map object
-m = folium.Map(location=[27.656174, 85.327837], zoom_start=16)
+m = folium.Map(location=[27.656174, 85.327837], zoom_start=17)
 
 # Global tooltip
 tooltip = 'Nepal Academy of Science and Technology'
@@ -11,7 +11,7 @@ tooltips = 'Tribhuvan International Airport'
 logoIcon = folium.features.CustomIcon('./static/MicrosoftTeams-image.png', icon_size=(50, 50))
 
 # Circle marker
-folium.CircleMarker( location=[27.696578, 85.358651],
+folium.CircleMarker(location=[27.696578, 85.358651],
                      radius=100,
                      popup='Lansat Image location',
                      color='#FF7F50',
