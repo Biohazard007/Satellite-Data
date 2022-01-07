@@ -26,7 +26,6 @@ folium.Marker([27.656174, 85.327837],
 folium.Marker([27.696578, 85.358651],
               popup='<strong>Location Two</strong>',
               tooltips=tooltips,
-
               icon=folium.Icon(color='red', icon='plane')).add_to(m)
 
 # generate map
