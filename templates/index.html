@@ -4,10 +4,42 @@
     <title> Antarikchya </title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_38833bccc8c44b61a7f3e48cea0dec7a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                };
+
+                #popup {
+                  width: 50vh;
+                  height: 50vh;
+                   background-color: lightblue;
+                }
+
+            </style>
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
 
   </head>
   <script type="text/javascript" src="/static/array.js"></script>
@@ -22,7 +54,7 @@
             <li><a href="#" class="nav-link px-2 text-white"><h2> ANTARIKCHYA </h2></a></li>
           </ul>
           <div class="text-end" style="margin-right: 15px;">
-            <a href="/"><button type="button" class="btn" style="background: #545454; color: white;" >Sign-Out</button></a>
+            <a href="/signin"><button type="button" class="btn" style="background: #545454; color: white;" >Sign-Out</button></a>
           </div>
         </div>
       </div>
@@ -37,7 +69,7 @@
 
       <ul class="nav nav-pills flex-column mb-auto " style=" color: #3a3a3a;">
         <li class="nav-item">
-          <a href="#" class="nav-link active d-flex gap-3 align-items-center text-white"  aria-current="page" style="padding: 15px; border-radius: 0px;">
+          <a href="#" class="nav-link  d-flex gap-3 align-items-center text-white"  aria-current="page" style="padding: 15px; border-radius: 0px;">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock-fill" viewBox="0 0 16 16" >
               <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
             </svg>
@@ -92,16 +124,26 @@
       </ul>
     </div>
 
-    <!--Biru ko edit gara-->
+
     <div class="flex w-75" style="height: 100%; float: left;" >
-      <button id="previous" class="btn btn btn-dark" style="height:50px; width:60px; position: absolute; top:50vh; "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
-</svg></button>
-      <button id="next" class="btn btn btn-dark" style="height:50px; width:60px; position: absolute; top:50vh; left: 97%;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-</svg></button>
 
 
+      <div id="popup" style="background: white; position: absolute; margin-top:5%; left:18%;">
+          <button id="previous" class="btn btn btn-dark" style="height:50px; width:60px; position: absolute; margin-top:20%; left:1%;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+                </svg></button>
+          <button id="next" class="btn btn btn-dark" style="height:50px; width:60px; position: absolute; margin-top:20%; left: 94%;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+          </svg></button>
+          <select class="form-select" style="width:100px; position: absolute; margin-top:10px; left: 10px;">
+          <option selected id="30-meter">30 M</option>
+          <option value="1" id="10-meter">10 M</option>
+          </select>
+          <img src="static/2000.png" id="satelliteImage" class="img-fluid " alt="Responsive image">
+          </div>
+
+      <!-- <div class="folium-map" id="map_38833bccc8c44b61a7f3e48cea0dec7a" >
+        </div>-->
       <!-- Not need for now
       <button id="zoomIn" class="btn btn-light" style=" position:absolute; top:10.3vh;">+</button>
       <button id="zoomOut" class="btn btn-light" style="position:absolute; top:15.8vh;">-</button>
@@ -110,9 +152,7 @@
 </svg></button>
       <button id="Area" class="btn btn-light" style="position:absolute; top:27.7vh;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-fill" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411z"/>
-</svg></button>-->
-
-
+</svg></button>
       <div class="input-group" style="position:absolute; margin-left: 50px; top:67px;">
         <div class="form-outline">
           <input type="search" id="form1" class="form-control" placeholder="Search.." />
@@ -128,14 +168,40 @@
           <option value="1" id="ndvi"> NDVI </option>
           <option value="2" id="nir"> NIR </option>
           <option value="3" id="ir"> IR </option>
-        </select>
-        <select class="form-select" style="width:70px; position:absolute; margin-left:210px; top:115px; ">
-          <option selected id="30-meter">30 M</option>
-          <option value="1" id="10-meter">10 M</option>
-        </select>
+        </select>-->
 
-        <img src="static/2000.png" id="satelliteImage" class="img-fluid " alt="Responsive image">
+
+
       </div>
+<button onclick="myFunction()">Display</button>
+
 
 </body>
+<script>
+
+            var map_38833bccc8c44b61a7f3e48cea0dec7a = L.map(
+                "map_38833bccc8c44b61a7f3e48cea0dec7a",
+                {
+                    center: [27.6557582, 85.3283925],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            var tile_layer_71042c6ead90408785c2c73fa3f5c0ea = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_38833bccc8c44b61a7f3e48cea0dec7a);
+
+          function myFunction() {
+            var x = document.getElementById("popup");
+            if (x.style.display === "none") {
+              x.style.display = "block";
+            } else {
+            x.style.display = "none";
+            }
+           };
+</script>
 </html>

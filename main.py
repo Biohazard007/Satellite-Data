@@ -7,7 +7,7 @@ app = Flask(__name__,static_folder='./static')
 def send_js(path):
     return send_from_directory(path)
 
-@app.route("/")
+@app.route("/signin")
 def signin():
     return render_template('signin.html')
 
@@ -23,5 +23,9 @@ def index():
 @app.route("/map")
 def map():
     return render_template('map.html')
+
+@app.route("/")
+def login():
+    return render_template('loading.html')
 
 app.run(debug=True)
