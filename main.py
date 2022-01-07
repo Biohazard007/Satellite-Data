@@ -2,6 +2,7 @@ from flask import Flask, render_template, send_from_directory
 
 app = Flask(__name__,static_folder='./static')
 
+
 @app.route('/static/<path:path>')
 def send_js(path):
     return send_from_directory(path)
