@@ -12,11 +12,11 @@ logoIcon = folium.features.CustomIcon('./static/MicrosoftTeams-image.png', icon_
 
 # Circle marker
 folium.CircleMarker(location=[27.696578, 85.358651],
-                     radius=100,
-                     popup='Lansat Image location',
-                     color='#FF7F50',
-                     fill=True,
-                     fill_color='#FF7F50').add_to(m)
+                    radius=100,
+                    popup='Lansat Image location',
+                    color='#FF7F50',
+                    fill=True,
+                    fill_color='#FF7F50').add_to(m)
 
 # Create markers
 folium.Marker([27.656174, 85.327837],
@@ -26,6 +26,7 @@ folium.Marker([27.656174, 85.327837],
 folium.Marker([27.696578, 85.358651],
               popup='<strong>Location Two</strong>',
               tooltips=tooltips,
+
               icon=folium.Icon(color='red', icon='plane')).add_to(m)
 
 # generate map
