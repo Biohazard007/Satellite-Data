@@ -39,6 +39,7 @@
             color: black;
         }
     </style>
+<!--  <script defer src="script.js"></script>-->
   </head>
   <body>
 
@@ -51,20 +52,23 @@
                 <div class="col-sm-6 px-5 pt-5">
                     <h2 class="font-weight-bold py-2"><img class="mb-4" src="../static/MicrosoftTeams-image.png" alt="" width="57" height="57"> ANTARIKCHYA</h2>
                     <h4>Sign into your account</h4>
-                    <form>
+
+<!--                    <div id="error"></div>-->
+
+                    <form id="form" action="/index">
                         <div class="form-row">
                             <div class="col-lg-7">
-                                <input type="email" placeholder="Email-Address" class="form-control my-3 p-3">
+                                <input id="email" type="email" placeholder="Email-Address" class="form-control my-3 p-3" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-lg-7">
-                                <input type="password" placeholder="********" class="form-control my-2 p-3">
+                                <input id="password" type="password" placeholder="********" class="form-control my-2 p-3" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-lg-7">
-                                <a href="/index"><button type="button" class="btn1 mt-3 mb-4 "> Login</button></a>
+                                <button type="submit" class="btn1 mt-3 mb-4 "> Login</button>
                             </div>
                         </div>
                         <a href="#">Forgot Password?</a>
