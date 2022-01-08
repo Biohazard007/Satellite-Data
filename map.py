@@ -32,8 +32,6 @@ folium.CircleMarker(location=[27.97959051141473, 83.5804099189001],
                     fill=True,
                     fill_color='#006400').add_to(m)
 
-
-
 # Create markers
 folium.Marker([27.656174, 85.327837],
               popup='<strong>Location One</strong>',
