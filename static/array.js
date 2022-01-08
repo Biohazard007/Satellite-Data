@@ -46,7 +46,7 @@ window.onload = function(){
 /*--This is the array loop for our images for Kaligandaki dam--*/
 /*------------------------------------*/
 /*const images = new Array(11).fill().map((item,index)=>{
-    return `/static/${202101+index}.PNG`
+    return `/static/Hydro/${202101+index}.PNG`
 })
 var currentIndex = 0
 
