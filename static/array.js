@@ -2,7 +2,7 @@
 /*--This is the array loop for our images for 30 M--*/
 /*------------------------------------*/
 const images = new Array(22).fill().map((item,index)=>{
-    return `/static/${2000+index}.PNG`
+    return `/static/Kathmandu/${2000+index}.PNG`
 })
 var currentIndex = 0
 
@@ -24,7 +24,7 @@ window.onload = function(){
 /*--This is the array loop for our images for Gautam Buddha airport--*/
 /*------------------------------------*/
 /*const images = new Array(7).fill().map((item,index)=>{
-    return `/static/${022016+index}.PNG`
+    return `/static/Gautam/${022016+index}.PNG`
 })
 var currentIndex = 0
 
