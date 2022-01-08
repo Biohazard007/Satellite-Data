@@ -21,10 +21,27 @@ window.onload = function(){
 }
 
 
-/*--This is the array loop for our images for 10 M--*/
+/*--This is the array loop for our images for Gautam Buddha airport--*/
 /*------------------------------------*/
 
+const images = new Array(7).fill().map((item,index)=>{
+    return `/static/${022016+index}.PNG`
+})
+var currentIndex = 0
 
+window.onload = function(){
+    document.getElementById('satelliteImages').src = images[currentIndex]
+    document.getElementById('previouss').addEventListener('click',function(){
+      currentIndex = (currentIndex-1)<0?images.length-1: (currentIndex -1)% images.length
+            document.getElementById('satelliteImage').src = images[currentIndex]
+                document.getElementById('message').innerText = images[currentIndex].replace('/static/','')
+
+    })
+    document.getElementById('nexts').addEventListener('click',function(){
+                  currentIndex = (currentIndex +1)% images.length
+            document.getElementById('satelliteImages').src = images[currentIndex]
+    })
+}
 
 
 
