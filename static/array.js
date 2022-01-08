@@ -14,16 +14,19 @@ const imagesMapping  = {
    "kalika": {
     total: 4,
     start: 1
-   }
+   },
    "Hydro":{
    total: 12,
    start: 202101
-   }
+   },
    "Sanima":{
    total: 8,
    start: 012015
+   },
+    "Royal":{
+   total: 8,
+   start: 012015
    }
-
 }
 var currentIndex=0
 var currentAddress='Kathmandu'
