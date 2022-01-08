@@ -21,11 +21,11 @@ const imagesMapping  = {
    },
    "Sanima":{
    total: 8,
-   start: 012015
+   start: 1
    },
     "Royal":{
-   total: 8,
-   start: 012015
+   total: 58,
+   start: 1
    }
 }
 var currentIndex=0
