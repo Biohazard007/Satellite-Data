@@ -1,46 +1,105 @@
 
 /*--This is the array loop for our images for 30 M--*/
 /*------------------------------------*/
-const images = new Array(22).fill().map((item,index)=>{
-    return `/static/Kathmandu/${2000+index}.PNG`
-})
-var currentIndex = 0
+
+const imagesMapping  = {
+   "Kathmandu": {
+    total: 22,
+    start: 2000
+   },
+   "Gautam": {
+    total: 7,
+    start: 22016
+   },
+   "kalika": {
+    total: 4,
+    start: 1
+   }
+   "Hydro":{
+   total: 12,
+   start: 202101
+   }
+   "Sanima":{
+   total: 8,
+   start: 012015
+   }
+
+}
+var currentIndex=0
+var currentAddress='Kathmandu'
+
+ function getImages(each='Kathmandu'){
+    const images = new Array(imagesMapping[each].total).fill().map((item,index)=>{
+        return `/static/${each}/${imagesMapping[each].start+index}.PNG`
+    })
+    return images;
+ }
+function updateImages(each = 'Kathmandu'){
+    let currentIndex = 0
+    // KathmandusatelliteImage
+
+
+
+}
 
 window.onload = function(){
-    document.getElementById('satelliteImage').src = images[currentIndex]
+    console.log("windows onload")
     document.getElementById('previous').addEventListener('click',function(){
-      currentIndex = (currentIndex-1)<0?images.length-1: (currentIndex -1)% images.length
-            document.getElementById('satelliteImage').src = images[currentIndex]
-                document.getElementById('message').innerText = images[currentIndex].replace('/static/','')
+      currentIndex = (currentIndex-1)<0?getImages(currentAddress).length-1: (currentIndex -1)% getImages(currentAddress).length
+            document.getElementById('satelliteImage').src = getImages(currentAddress)[currentIndex]
 
     })
     document.getElementById('next').addEventListener('click',function(){
-                  currentIndex = (currentIndex +1)% images.length
-            document.getElementById('satelliteImage').src = images[currentIndex]
+                  currentIndex = (currentIndex +1)% getImages(currentAddress).length
+            document.getElementById('satelliteImage').src = getImages(currentAddress)[currentIndex]
     })
+    let array = Object.keys(imagesMapping)
+     var ul = document.getElementById('buttonList');
+
+    for(let item of array){
+        //updateImages(item)
+         let li = document.createElement("li");
+         let button = document.createElement('button');
+         button.addEventListener('click',function(){
+            document.getElementById('satelliteImage').src = getImages(item)[0]
+            currentAddress=item
+            var x = document.getElementById("popup");
+            if (x.style.display === "none") {
+              x.style.display = "block";
+            } else {
+            x.style.display = "none";
+            }
+         })
+         button.appendChild(document.createTextNode(item))
+  li.appendChild(button);
+    ul.appendChild(li);
+//        //document.getElementById('buttonList').innerHtml = `<li><button onclick="myFunction()">${item}</button></li>`
+    }
 }
+
+
 
 
 /*--This is the array loop for our images for Gautam Buddha airport--*/
 /*------------------------------------*/
-/*const images = new Array(7).fill().map((item,index)=>{
-    return `/static/Gautam/${022016+index}.PNG`
-})
-var currentIndex = 0
-
-window.onload = function(){
-    document.getElementById('gautam').src = images[currentIndex]
-    document.getElementById('prev2').addEventListener('click',function(){
-      currentIndex = (currentIndex-1)<0?images.length-1: (currentIndex -1)% images.length
-            document.getElementById('gautam').src = images[currentIndex]
-                document.getElementById('message').innerText = images[currentIndex].replace('/static/','')
-
-    })
-    document.getElementById('next2').addEventListener('click',function(){
-                  currentIndex = (currentIndex +1)% images.length
-            document.getElementById('gautam').src = images[currentIndex]
-    })
-}*/
+//const images = new Array(7).fill().map((item,index)=>{
+//    return `/static/Gautam/${022016+index}.PNG`
+//})
+//var currentIndex = 0
+//
+//window.onload = function(){
+//    document.getElementById('gautam').src = images[currentIndex]
+//    document.getElementById('prev2').addEventListener('click',function(){
+//      currentIndex = (currentIndex-1)<0?images.length-1: (currentIndex -1)% images.length
+//            document.getElementById('gautam').src = images[currentIndex]
+//                document.getElementById('message').innerText = images[currentIndex].replace('/static/','')
+//
+//    })
+//    document.getElementById('next2').addEventListener('click',function(){
+//                  currentIndex = (currentIndex +1)% images.length
+//            document.getElementById('gautam').src = images[currentIndex]
+//    })
+//}
 
 
 /*--This is the array loop for our images for Kaligandaki dam--*/
