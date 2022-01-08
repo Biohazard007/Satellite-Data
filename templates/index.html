@@ -36,8 +36,7 @@
                    background-color: lightblue;
 
                 }
-
-                .font{
+              .font{
                     font-family: 'Cornerstone';
                     src: url('Cornerstone.woff2') format('woff2'),
                    url('Cornerstone.woff') format('woff');
@@ -46,6 +45,7 @@
                   font-display: swap;
 
                 }
+
             </style>
 
     <!-- Bootstrap CSS -->
@@ -71,12 +71,12 @@
   </header>
 
   </main>
+  <!--Left Navigation bar-->
     <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <div class="d-flex flex-column flex-shrink-0  text-white bg-dark" style="width: 15%; height: 100vh; float: left;">
       <div class="w-100 " >
 		    <img src="static/Sanima.jpg" class="img-fluid" alt="Samina Bank">
       </div>
-
       <ul class="nav nav-pills flex-column mb-auto " style=" color: #3a3a3a;">
         <li class="nav-item">
           <a href="#" class="nav-link  d-flex gap-3 align-items-center text-white "  aria-current="page" style="padding: 15px; border-radius: 0px;">
@@ -134,6 +134,8 @@
       </ul>
     </div>
     <div class="flex w-75" style="height: 100%; float: left;" >
+
+      <!--This is for Tribhuwan International Airport-->
       <div id="popup" style="background: white; position: absolute; margin-top:5%; left:18%; z-index: 999;">
           <button id="previous" class="btn btn btn-dark" style="height:50px; width:60px; position: absolute; margin-top:20%; left:1%;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
@@ -146,41 +148,39 @@
           <option value="1" id="10-meter">10 M</option>
           </select>
           <img src="static/2000.png" id="satelliteImage" class="img-fluid " alt="Responsive image">
-          </div>
+      </div>
 
+      <!--This is for Gauaum budda airport-->
+      <div id="popgaut" style="background: white; position: absolute; margin-top:5%; left:18%; z-index: 998;">
+          <button id="prev2" class="btn btn btn-dark" style="height:50px; width:60px; position: absolute; margin-top:20%; left:1%;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+                </svg></button>
+          <button id="next2" class="btn btn btn-dark" style="height:50px; width:60px; position: absolute; margin-top:20%; left: 94%;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+          </svg></button>
+          <img src="static/022016.png" id="gautam" class="img-fluid " alt="Responsive image">
+      </div>
+
+            <!--This is for Kaligandaki dam-->
+      <div id="popkali" style="background: white; position: absolute; margin-top:5%; left:18%; z-index: 997;">
+          <button id="prev3" class="btn btn btn-dark" style="height:50px; width:60px; position: absolute; margin-top:20%; left:1%;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+                </svg></button>
+          <button id="next3" class="btn btn btn-dark" style="height:50px; width:60px; position: absolute; margin-top:20%; left: 94%;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+          </svg></button>
+          <img src="static/202101.png" id="kali" class="img-fluid " alt="Responsive image">
+      </div>
+
+      <!--This displays map.hmtl image in index page-->
       <iframe src="/map" height="100%" width="100%"></iframe>
 
-    <!--<div class="folium-map" id="map_38833bccc8c44b61a7f3e48cea0dec7a">
-        </div>-->
 
-      <!-- Not need for now
-      <button id="zoomIn" class="btn btn-light" style=" position:absolute; top:10.3vh;">+</button>
-      <button id="zoomOut" class="btn btn-light" style="position:absolute; top:15.8vh;">-</button>
-      <button id="Home" class="btn btn-light" style="position:absolute; top:22vh;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
-        <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
-</svg></button>
-      <button id="Area" class="btn btn-light" style="position:absolute; top:27.7vh;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-fill" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411z"/>
-</svg></button>
-      <div class="input-group" style="position:absolute; margin-left: 50px; top:67px;">
-        <div class="form-outline">
-          <input type="search" id="form1" class="form-control" placeholder="Search.." />
-        </div>
-          <button type="button" class="btn btn-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-            </svg>
-          </button>
-        </div>
-        <select class="form-select" style="width:160px; position: absolute; margin-left:40px; top:115px; ">
-         <option selected placeholder="Choose filter">Choose filter</option>
-          <option value="1" id="ndvi"> NDVI </option>
-          <option value="2" id="nir"> NIR </option>
-          <option value="3" id="ir"> IR </option>
-        </select>-->
     </div>
 
-<button onclick="myFunction()">Display</button>
+<button onclick="myFunction()">Display Tribhwan Airport</button>
+<button onclick="myNextFunction()">Display Gautam budda Airport</button>
+<button onclick="anotherFunction()">Display Kaligandaki A Hydropower</button>
 
 
 </body>
@@ -210,5 +210,24 @@
             x.style.display = "none";
             }
            };
+
+          function myNextFunction() {
+            var y = document.getElementById("popgaut");
+            if (y.style.display === "none") {
+              y.style.display = "block";
+            } else {
+            y.style.display = "none";
+            }
+           };
+          function anotherFunction() {
+            var a = document.getElementById("popkali");
+            if (a.style.display === "none") {
+              a.style.display = "block";
+            } else {
+            a.style.display = "none";
+            }
+           };
+
 </script>
 </html>
+
