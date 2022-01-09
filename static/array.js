@@ -81,62 +81,6 @@ window.onload = function(){
 }
 
 
-
-
-/*--This is the array loop for our images for Gautam Buddha airport--*/
-/*------------------------------------*/
-//const images = new Array(7).fill().map((item,index)=>{
-//    return `/static/Gautam/${022016+index}.PNG`
-//})
-//var currentIndex = 0
-//
-//window.onload = function(){
-//    document.getElementById('gautam').src = images[currentIndex]
-//    document.getElementById('prev2').addEventListener('click',function(){
-//      currentIndex = (currentIndex-1)<0?images.length-1: (currentIndex -1)% images.length
-//            document.getElementById('gautam').src = images[currentIndex]
-//                document.getElementById('message').innerText = images[currentIndex].replace('/static/','')
-//
-//    })
-//    document.getElementById('next2').addEventListener('click',function(){
-//                  currentIndex = (currentIndex +1)% images.length
-//            document.getElementById('gautam').src = images[currentIndex]
-//    })
-//}
-
-
-/*--This is the array loop for our images for Kaligandaki dam--*/
-/*------------------------------------*/
-/*const images = new Array(11).fill().map((item,index)=>{
-    return `/static/Hydro/${202101+index}.PNG`
-})
-var currentIndex = 0
-
-window.onload = function(){
-    document.getElementById('kali').src = images[currentIndex]
-    document.getElementById('prev3').addEventListener('click',function(){
-      currentIndex = (currentIndex-1)<0?images.length-1: (currentIndex -1)% images.length
-            document.getElementById('kali').src = images[currentIndex]
-                document.getElementById('message').innerText = images[currentIndex].replace('/static/','')
-
-    })
-    document.getElementById('next3').addEventListener('click',function(){
-                  currentIndex = (currentIndex +1)% images.length
-            document.getElementById('kali').src = images[currentIndex]
-    })
-}*/
-
-
-
-
-
-/*--This is the array loop for our images for Royal Palace--*/
-/*------------------------------------*/
-
-
-
-
-
 /*--This is for map--*/
 /*------------------------------------*/
 
