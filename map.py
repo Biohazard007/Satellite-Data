@@ -36,7 +36,7 @@ folium.Marker([27.697298384477698, 84.50595621178529],
               icon=folium.Icon(color='green')).add_to(m)
 
 folium.Marker([27.65880433350953, 85.32471320359764],
-              popup='<div style="height:500px; width:500px;>"<img src="/static/Ultra/Satdobato.png"></div>',
+              popup='<img src="/static/Ultra/Satdobato.png">',
               tooltips=tooltips,
               icon=folium.Icon(color='green')).add_to(m)
 
@@ -50,6 +50,12 @@ folium.Marker([27.672865722121642, 85.31362012394337],
               popup='<img src="/static/Ultra/Jwalakhel.png">',
               tooltips=tooltips,
               icon=folium.Icon(color='red')).add_to(m)
+
+folium.Marker([27.71461959074128, 85.32539309334334],
+              tooltips=tooltips,
+              icon=folium.Icon(color='blue')).add_to(m)
+
+
 # generate map
 m.save('templates/map.html')
 
