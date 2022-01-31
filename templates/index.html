@@ -83,7 +83,7 @@
                                     display: none;
                                   }
 
-                 #laabel{
+                 #label{
                         display: block;
                         background-color: #025bee;
                         color: #ffffff;
@@ -212,11 +212,11 @@
 
   <!--Multiple images upload-->
   <div class="container" id="container1" style="display: none;">
-        <input type="file" id="file-input" accept="image/png, image/jpeg" onchange="preview()" multiple>
-        <label for="file-input" id="laabel">
+        <input type="file" id="file-input" onchange="preview()" multiple>
+        <label for="file-input" id="label">
           Choose A Photo
         </label>
-          <label id="process" onclick="">Process Image</label>
+          <label id="process" onclick="process()">Process Image</label>
         <p id="num-of-files">No Files Chosen</p>
         <div id="images"></div>
 
@@ -266,13 +266,18 @@ function preview(){
         reader.readAsDataURL(i);
     }
 
-    if (j !=0){
-            x.style.display = "block";
-            } else {
-            x.style.display = "none";
-            }
-
 }
+
+          function process(){
+
+
+
+          }
+
+
+
+
+
 
             function func() {
             var x = document.getElementById("container1");
