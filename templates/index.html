@@ -76,24 +76,36 @@
                             padding: 50px 20px;
                             border-radius: 7px;
                             box-shadow: 0 20px 35px rgba(0,0,0,0.05);
+                            overflow: scroll;
                             }
 
                 input[type="file"]{
                                     display: none;
                                   }
 
-                 label{
+                 #laabel{
                         display: block;
-                        position: relative;
                         background-color: #025bee;
                         color: #ffffff;
                         font-size: 18px;
                         text-align: center;
                         width: 300px;
                         padding: 18px 0;
-                        margin: auto;
                         border-radius: 5px;
                         cursor: pointer;
+                        float:left;
+                  }
+                  #process{
+                        display: block;
+                        background-color: #025bee;
+                        color: #ffffff;
+                        font-size: 18px;
+                        text-align: center;
+                        width: 300px;
+                        padding: 18px 0;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        float:right;
                   }
                 .container p{
                               text-align: center;
@@ -201,12 +213,13 @@
   <!--Multiple images upload-->
   <div class="container" id="container1" style="display: none;">
         <input type="file" id="file-input" accept="image/png, image/jpeg" onchange="preview()" multiple>
-        <label for="file-input">
+        <label for="file-input" id="laabel">
           Choose A Photo
         </label>
+          <label id="process" onclick="">Process Image</label>
         <p id="num-of-files">No Files Chosen</p>
         <div id="images"></div>
-        <label id="process" onclick="" style="display: none;"> Process</label>
+
   </div>
 
 
