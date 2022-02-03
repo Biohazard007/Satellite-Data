@@ -240,7 +240,7 @@
           Choose A Photo
         </label>
           <form class="grid" action="/result" method="POST">
-            <input type="submit" id="script" name="script-button" value="Process Image" class="file_submit" onclick="process()">
+            <input type="button" id="script" name="script-button" value="Process Image" class="file_submit" onclick="process()">
           </form>
         <p id="num-of-files">No Files Chosen</p>
         <div id="images"></div>
@@ -312,6 +312,14 @@ function preview(){
           }
 
 
+            function process() {
+            var x = document.getElementById("results");
+            if (x.style.display === "none") {
+              x.style.display = "block";
+            } else {
+            x.style.display = "none";
+            }
+           };
 
 
 
