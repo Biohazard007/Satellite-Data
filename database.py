@@ -1,5 +1,6 @@
-from flask import Flask, request, url_for
+from flask import Flask
 from flask_pymongo import PyMongo
 
-ap = Flask(__name__)
-app. config['MONGO_URI'] =
+app = Flask(__name__)
+app.config["MONGO_URI"] = "mongodb://localhost:27017/myDatabase"
+mongo = PyMongo(app)
