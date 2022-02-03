@@ -24,6 +24,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
+
                 #map_38833bccc8c44b61a7f3e48cea0dec7a {
                     position: relative;
                     width: 100.0%;
@@ -82,8 +83,8 @@
                             background-color: #ffffff;
                             width: auto;
                             position: absolute;
-                            margin-left: 20%;
-                            margin-top: 7%;
+                            margin-left: 35%;
+                            margin-top: 2%;
                             padding: 50px 20px;
                             border-radius: 7px;
                             box-shadow: 0 20px 35px rgba(0,0,0,0.05);
@@ -115,7 +116,6 @@
                         padding: 18px 0;
                         border-radius: 5px;
                         cursor: pointer;
-                        float:right;
                   }
                   #process{
                         display: block;
@@ -163,6 +163,48 @@
                     width: 200px;
                     height: 20px;
                 }
+                            #filter{ margin-left: 120px;
+
+                            }
+
+                            label { display:block; margin:0; }
+                            label span { color:#0F202E; display:block; font-weight:bold; margin:0 0 10px; }
+                            label span span { display:inline; font-weight:normal; margin:0; }
+
+                            select {
+                                appearance:none;
+                                background: #dfe6ea;
+                                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%230071B1'%3E%3Cpolygon points='0,0 100,0 50,50'/%3E%3C/svg%3E%0A");
+                                background-repeat: no-repeat;
+                                background-position: 92%;
+                                background-position: calc(100% - 12px) 21px;
+                                background-size: 16px;
+                                border:0;
+                                color: #0f202e;
+                                font-size: 20px;
+                                height: 50px;
+                                line-height: 25px;
+                                padding: 12px 50px 12px 15px;
+                                width:100%; max-width:300px;
+                            }
+                            select:focus, .focus { border-radius:3px; box-shadow:0 0 0 3px #409ed4; outline:0; }
+
+
+                #processImage{
+                        display: block;
+                        background-color: #025bee;
+                        color: #ffffff;
+                        font-size: 18px;
+                        text-align: center;
+                        width: 300px;
+                        padding: 10px 0;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        margin-left: 121px;
+                        margin-top: 10px;
+                 }
+
+
             </style>
 
     <!-- Bootstrap CSS -->
@@ -239,7 +281,7 @@
           Choose A Photo
         </label>
           <form class="grid" action="/result" method="POST">
-            <input type="button" id="script" name="script-button" value="Process Image" class="file_submit" onclick="process()">
+            <input type="button" id="script" name="script-button" value="Process Image" class="file_submit" onclick="process()" style="float:right;">
           </form>
         <p id="num-of-files">No Files Chosen</p>
         <div id="images"></div>
@@ -249,9 +291,22 @@
     <div style="float:left">
        <img src="/static/Results/RBG.png" style="width:70vh; height:70vh;"/>
     </div>
-    <div style="float:left">
+    <!--<div style="float:left; display: none;">
        <img src="/static/Results/NDVI.png" style="width:70vh; height:70vh;"/>
+    </div>-->
+    <div>
+         <label id="filter">
+             <select>
+                <option disabled selected>Please select Filter</option>
+                <option>NDVI</option>
+                <option>NDWI</option>
+                <option>NDSI</option>
+            </select>
+        </label>
     </div>
+      <div>
+            <input type="button" value="Process Image" id="processImage" onclick="filterProcess()" >
+      </div>
   </div>
 
 
@@ -300,6 +355,14 @@ function preview(){
 
 }
 
+            function rgb() {
+            var x = document.getElementById("results");
+            if (x.style.display === "none") {
+              x.style.display = "block";
+            } else {
+            x.style.display = "none";
+            }};
+
 
 
             function process() {
@@ -312,7 +375,7 @@ function preview(){
             var y = document.getElementById("container1");
             if (y.style.display === "none") {
               y.style.display = "block";
-            } else {g
+            } else {
             y.style.display = "none";
             }
            };

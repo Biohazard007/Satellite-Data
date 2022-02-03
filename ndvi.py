@@ -21,7 +21,7 @@ fig1 = ep.plot_rgb(arr_st,
                    rgb=(2, 1, 0),
                    stretch=True,
                    str_clip=0.2,
-                   figsize=(10, 16)).figure
+                   figsize=(4, 8)).figure
 
 fig1.savefig("C:/Users/Rojesh Thapa/PycharmProjects/pythonProject/Satellite-Data/static/Results/RBG.png")
 
@@ -32,7 +32,7 @@ fig2 = ep.plot_bands(ndvi,
                      cols=1,
                      vmin=-1,
                      vmax=1,
-                     figsize=(10, 14)).figure
+                     figsize=(4, 8)).figure
 
 fig2.savefig("C:/Users/Rojesh Thapa/PycharmProjects/pythonProject/Satellite-Data/static/Results/NDVI.png")
 
