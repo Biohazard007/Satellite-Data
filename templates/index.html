@@ -95,6 +95,18 @@
                         cursor: pointer;
                         float:left;
                   }
+                  input{
+                        display: block;
+                        background-color: #025bee;
+                        color: #ffffff;
+                        font-size: 18px;
+                        text-align: center;
+                        width: 300px;
+                        padding: 18px 0;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        float:right;
+                  }
                   #process{
                         display: block;
                         background-color: #025bee;
@@ -216,14 +228,28 @@
         <label for="file-input" id="label">
           Choose A Photo
         </label>
-          <label id="process" onclick="process()">Process Image</label>
+          <form class="grid" action="/result" method="POST">
+            <input type="submit" id="script" name="script-button" value="Process Image" class="file_submit" onclick="process()">
+          </form>
         <p id="num-of-files">No Files Chosen</p>
         <div id="images"></div>
 
   </div>
 
+  <div class="container" id="result_display" style="display: none;">
+    <div id="rgb">
+       <img src=""/>
+    </div>
+    <div id="ndvii">
+       <img src=""/>
+    </div>
 
-    <div class="flex" id="Container2" style="height: 200 px; width: 1000px;">
+
+
+  </div>
+
+
+    <!--<div class="flex" id="Container2" style="height: 200 px; width: 1000px;">
       <table>
         <tr>
           Save Result:
@@ -240,7 +266,7 @@
         </tr>
       </table>
 
-    </div>
+    </div>-->
 </body>
 <script>
 

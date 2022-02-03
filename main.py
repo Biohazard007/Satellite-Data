@@ -36,5 +36,4 @@ def map():
 def new():
     return render_template('new.html')
 
-
 app.run(debug=True)
