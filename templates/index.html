@@ -79,6 +79,17 @@
                             overflow: scroll;
                             }
 
+                #results{
+                            background-color: #ffffff;
+                            width: 80%;
+                            position: absolute;
+                            margin-left: 20%;
+                            margin-top: 7%;
+                            padding: 50px 20px;
+                            border-radius: 7px;
+                            box-shadow: 0 20px 35px rgba(0,0,0,0.05);
+                            }
+
                 input[type="file"]{
                                     display: none;
                                   }
@@ -236,11 +247,11 @@
 
   </div>
 
-  <div class="container" id="result_display" style="display: none;">
-    <div id="rgb">
-       <img src="/static/Results/RGB.png"/>
+  <div class="container" id="results" style="display: block;">
+    <div id="rgb" style="float:left">
+       <img src="/static/Results/RBG.png"/>
     </div>
-    <div id="ndvii">
+    <div id="ndvii" style="float:right">
        <img src="/static/Results/NDVI.png"/>
     </div>
 
