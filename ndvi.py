@@ -5,7 +5,7 @@ import rasterio as rio
 import matplotlib.pyplot as plt
 import numpy as np
 
-landsat = 'C:/Users/Rojesh Thapa/PycharmProjects/pythonProject/Satellite-Data/static/Temp/*.tiff'
+landsat = 'static/Temp/*.tiff'
 data = glob.glob(landsat)
 data.sort()
 
@@ -23,7 +23,7 @@ fig1 = ep.plot_rgb(arr_st,
                    str_clip=0.2,
                    figsize=(4, 8)).figure
 
-fig1.savefig("C:/Users/Rojesh Thapa/PycharmProjects/pythonProject/Satellite-Data/static/Results/RBG.png")
+fig1.savefig("static/Results/RBG.png")
 
 ndvi = es.normalized_diff(arr_st[3], arr_st[2])
 
@@ -34,7 +34,7 @@ fig2 = ep.plot_bands(ndvi,
                      vmax=1,
                      figsize=(4, 8)).figure
 
-fig2.savefig("C:/Users/Rojesh Thapa/PycharmProjects/pythonProject/Satellite-Data/static/Results/NDVI.png")
+fig2.savefig("static/Results/NDVI.png")
 
 #import main.py
 
