@@ -209,8 +209,8 @@
   <script type="text/javascript" src="/static/array.js"></script>
 <body>
   <main>
+    <!--header-->
     <div class="b-example-divider"></div>
-
     <header class=" bg-dark text-white">
       <div >
         <div class="font d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start" style="margin-left: 15px;">
@@ -223,8 +223,8 @@
         </div>
       </div>
   </header>
-
   </main>
+
   <!--Left side bar-->
 
     <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
@@ -232,7 +232,6 @@
       <div class="w-100 " >
 		    <img src="static/Sanima.jpg" class="img-fluid" alt="Samina Bank">
       </div>
-
       <ul class="nav nav-pills flex-column mb-auto " id="navi" style=" color: #3a3a3a;">
         <li class="nav-item" >
           <a  class="nav-link d-flex gap-3 align-items-center text-white "  onclick="func()" aria-current="page" style="padding: 15px; border-radius: 0px;">
@@ -243,7 +242,6 @@
             Upload
           </a>
         </li>
-
         <li>
           <a class="nav-link text-white d-flex gap-3 align-items-center" id="upload" style="padding: 15px; ">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock-history" viewBox="0 0 16 16">
@@ -254,20 +252,14 @@
             History
           </a>
         </li>
-
       </ul>
     </div>
+
     <div  style="height: 100%; float:left; width:85%" >
-
       <!--This is for Tribhuwan International Airport which is in new.html-->
-
-
       <!--This displays map.hmtl image in index page-->
-
       <iframe src="/map" height="100%" width="100%"></iframe>
-
     </div>
-
 
   <!--Multiple images upload-->
   <div class="container" id="container1" style="display: none;">
@@ -315,25 +307,6 @@
 <script>
 
 
-           function ndvi() {
-            var x = document.getElementById("selectA").value;
-            if (x == "ndv") {
-              document.getElementById('processNdvi').style.display = "block";
-              document.getElementById('processNdwi').style.display = "none";
-              document.getElementById('processNdsi').style.display = "none";
-            }else if (x == "ndw") {
-              document.getElementById('processNdvi').style.display = "none";
-              document.getElementById('processNdwi').style.display = "block";
-              document.getElementById('processNdsi').style.display = "none";
-
-            } else if (x == "nds") {
-              document.getElementById('processNdvi').style.display = "none";
-              document.getElementById('processNdwi').style.display = "none";
-              document.getElementById('processNdsi').style.display = "block";
-
-            }
-           };
-
 //Upload and Display image javascript function
 let fileInput = document.getElementById("file-input");
 let imageContainer = document.getElementById("images");
@@ -360,6 +333,23 @@ function preview(){
 }
 
 
+           function ndvi() {
+            var x = document.getElementById("selectA").value;
+            if (x == "ndv") {
+              document.getElementById('processNdvi').style.display = "block";
+              document.getElementById('processNdwi').style.display = "none";
+              document.getElementById('processNdsi').style.display = "none";
+            }else if (x == "ndw") {
+              document.getElementById('processNdvi').style.display = "none";
+              document.getElementById('processNdwi').style.display = "block";
+              document.getElementById('processNdsi').style.display = "none";
+            } else if (x == "nds") {
+              document.getElementById('processNdvi').style.display = "none";
+              document.getElementById('processNdwi').style.display = "none";
+              document.getElementById('processNdsi').style.display = "block";
+            }
+           };
+
 
             function filterNdvi() {
             var x = document.getElementById("ndvii");
@@ -377,7 +367,8 @@ function preview(){
               x.style.display = "block";
             } else {
             x.style.display = "none";
-            }};
+            }
+            };
 
 
             //Upload process javascript function
