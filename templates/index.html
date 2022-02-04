@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
+    <link rel="stylesheet" href="styles.css">
 
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -83,8 +83,8 @@
                             background-color: #ffffff;
                             width: auto;
                             position: absolute;
-                            margin-left: 35%;
-                            margin-top: 2%;
+                            margin-left: 20%;
+                            margin-top: 1%;
                             padding: 50px 20px;
                             border-radius: 7px;
                             box-shadow: 0 20px 35px rgba(0,0,0,0.05);
@@ -163,9 +163,9 @@
                     width: 200px;
                     height: 20px;
                 }
-                            #filter{ margin-left: 120px;
-
-                            }
+                            #filter{
+                                  margin-left: 27%;
+                                  }
 
                             label { display:block; margin:0; }
                             label span { color:#0F202E; display:block; font-weight:bold; margin:0 0 10px; }
@@ -190,26 +190,21 @@
                             select:focus, .focus { border-radius:3px; box-shadow:0 0 0 3px #409ed4; outline:0; }
 
 
-                #processImage{
-                        display: block;
-                        background-color: #025bee;
-                        color: #ffffff;
-                        font-size: 18px;
-                        text-align: center;
-                        width: 300px;
-                        padding: 10px 0;
-                        border-radius: 5px;
-                        cursor: pointer;
-                        margin-left: 121px;
-                        margin-top: 10px;
-                 }
-
-
+                            #processNdvi, #processNdwi, #processNdsi{
+                                    display: block;
+                                    background-color: #025bee;
+                                    color: #ffffff;
+                                    font-size: 18px;
+                                    text-align: center;
+                                    width: 200px;
+                                    margin-top: 10px;
+                                    margin-left: 37%;
+                                    padding: 10px 0;
+                                    border-radius: 5px;
+                                    cursor: pointer;
+                             }
             </style>
-
     <!-- Bootstrap CSS -->
-
-
   </head>
   <script type="text/javascript" src="/static/array.js"></script>
 <body>
@@ -288,50 +283,59 @@
   </div>
 
   <div id="results" style="display: none;">
-    <div style="float:left">
-       <img src="/static/Results/RBG.png" style="width:70vh; height:70vh;"/>
-    </div>
-    <!--<div style="float:left; display: none;">
-       <img src="/static/Results/NDVI.png" style="width:70vh; height:70vh;"/>
-    </div>-->
-    <div>
+      <div>
+         <!-- RGB Filter Options-->
+        <div style="float:left">
+           <img src="/static/Results/RBG.png" style="width:70vh; height:70vh;"/>
+        </div>
+
+          <!-- NDVI Filter Options-->
+        <div id="ndvii" style="float:right; display: none;">
+           <img src="/static/Results/NDVI.png" style="width:70vh; height:70vh;"/>
+        </div>
+      </div>
+      <!--Choose Filter-->
          <label id="filter">
-             <select>
+             <select id="selectA" onclick="ndvi()">
                 <option disabled selected>Please select Filter</option>
-                <option>NDVI</option>
-                <option>NDWI</option>
-                <option>NDSI</option>
+                <option value="ndv">NDVI</option>
+                <option value="ndw" >NDWI</option>
+                <option value="nds" >NDSI</option>
             </select>
         </label>
+            <div>
+                <input type="button" value="Process NDVI" id="processNdvi" onclick="filterNdvi()" style="display:none">
+                <input type="button" value="Process NDWI" id="processNdwi" onclick="filterNdvi()" style="display:none">
+                <input type="button" value="Process NDSI" id="processNdsi" onclick="filterNdvi()" style="display:none">
+            </div>
     </div>
-      <div>
-            <input type="button" value="Process Image" id="processImage" onclick="filterProcess()" >
-      </div>
-  </div>
 
 
-    <!--<div class="flex" id="Container2" style="height: 200 px; width: 1000px;">
-      <table>
-        <tr>
-          Save Result:
-        </tr>
-        <tr>
-         <th> <b>Location</b></th>
-          <th> <b>Date</b></th>
-          <th> <b>RGB</b></th>
-          <th> <b>NDVI</b></th>
-        </tr>
-        <tr>
-
-
-        </tr>
-      </table>
-
-    </div>-->
 </body>
 <script>
 
- let fileInput = document.getElementById("file-input");
+
+           function ndvi() {
+            var x = document.getElementById("selectA").value;
+            if (x == "ndv") {
+              document.getElementById('processNdvi').style.display = "block";
+              document.getElementById('processNdwi').style.display = "none";
+              document.getElementById('processNdsi').style.display = "none";
+            }else if (x == "ndw") {
+              document.getElementById('processNdvi').style.display = "none";
+              document.getElementById('processNdwi').style.display = "block";
+              document.getElementById('processNdsi').style.display = "none";
+
+            } else if (x == "nds") {
+              document.getElementById('processNdvi').style.display = "none";
+              document.getElementById('processNdwi').style.display = "none";
+              document.getElementById('processNdsi').style.display = "block";
+
+            }
+           };
+
+//Upload and Display image javascript function
+let fileInput = document.getElementById("file-input");
 let imageContainer = document.getElementById("images");
 let numOfFiles = document.getElementById("num-of-files");
 
@@ -355,6 +359,18 @@ function preview(){
 
 }
 
+
+
+            function filterNdvi() {
+            var x = document.getElementById("ndvii");
+            if (x.style.display === "none") {
+              x.style.display = "block";
+            } else {
+            x.style.display = "none";
+            }
+           };
+
+            //Upload rgb image display function
             function rgb() {
             var x = document.getElementById("results");
             if (x.style.display === "none") {
@@ -364,7 +380,7 @@ function preview(){
             }};
 
 
-
+            //Upload process javascript function
             function process() {
             var x = document.getElementById("results");
             if (x.style.display === "none") {
@@ -380,9 +396,7 @@ function preview(){
             }
            };
 
-
-
-
+            //Upload main javascript function
             function func() {
             var x = document.getElementById("container1");
             if (x.style.display === "none") {
@@ -395,7 +409,6 @@ function preview(){
               y.style.display = "none";
             }
            };
-
 
 </script>
 
