@@ -1,39 +1,16 @@
-from flask import Flask, render_template, send_from_directory
+# This is a sample Python script.
 
-app = Flask(__name__, static_folder='./static')
-
-@app.route('/static/<path:path>')
-def send_js(path):
-    return send_from_directory(path)
+# Press Shift+F10 to execute it or replace it with your code.
+# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 
-@app.route("/")
-def login():
-    return render_template('loading.html')
+def print_hi(name):
+    # Use a breakpoint in the code line below to debug your script.
+    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
 
-@app.route("/signin")
-def signin():
-    return render_template('signin.html')
+# Press the green button in the gutter to run the script.
+if __name__ == '__main__':
+    print_hi('PyCharm')
 
-
-@app.route("/signup")
-def signup():
-    return render_template('signup.html')
-
-
-@app.route("/index")
-def index():
-    return render_template('index.html')
-
-
-@app.route("/map")
-def map():
-    return render_template('map.html')
-
-
-@app.route("/new")
-def new():
-    return render_template('new.html')
-
-app.run(debug=True)
+# See PyCharm help at https://www.jetbrains.com/help/pycharm/
