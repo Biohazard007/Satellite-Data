@@ -5,39 +5,16 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
-    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
-    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
 
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-
-                #map_38833bccc8c44b61a7f3e48cea0dec7a {
-                    position: relative;
-                    width: 100.0%;
-                    height: 100.0%;
-                    left: 0.0%;
-                    top: 0.0%;
-                };
-
-                #popup{
-                  width: 50vh;
-                  height: 50vh;
-                  background-color: lightblue;
-                }
 
               .font{
                     font-family: 'Cornerstone';
@@ -53,19 +30,6 @@
                 #havi:hover{ background-color: yellow;
                              color: white;
                 }
-                .image-preview{ width:300px;
-                                min-height:100px;
-                                border: 2px solid #dddddd;
-                                margin-top:15px;
-
-
-                                display:flex;
-                                align-items: center;
-                                justify-content: center;
-                                font-weight: bold;
-                                color: #cccccc;
-                }
-
 
                 .container{
                             background-color: #ffffff;
@@ -90,9 +54,7 @@
                             box-shadow: 0 20px 35px rgba(0,0,0,0.05);
                             }
 
-                input[type="file"]{
-                                    display: none;
-                                  }
+                input[type="file"]{display: none;}
 
                  #label{
                         display: block;
@@ -117,18 +79,7 @@
                         border-radius: 5px;
                         cursor: pointer;
                   }
-                  #process{
-                        display: block;
-                        background-color: #025bee;
-                        color: #ffffff;
-                        font-size: 18px;
-                        text-align: center;
-                        width: 300px;
-                        padding: 18px 0;
-                        border-radius: 5px;
-                        cursor: pointer;
-                        float:right;
-                  }
+
                 .container p{
                               text-align: center;
                               margin: 20px 0 30px 0;
@@ -142,71 +93,36 @@
                           gap: 20px;
                           flex-wrap: wrap;
                  }
-                figure{
-                        width: 45%;
-                  }
-                img{
-                    width: 100%;
-                    }
+                figure{width: 45%; }
+
+                img{width: 100%;}
+
                 figCaption{
                             text-align: center;
                             font-size: 2.4min;
                             margin-top: 0.5min;
                             }
-                table{
-                      border: 1px solid black;
-                      border-collapse: collapse;
-                      height: auto;
-                      width: auto;
-                      }
-                th{
-                    width: 200px;
-                    height: 20px;
-                }
-                            #filter{
-                                  margin-left: 27%;
-                                  }
 
-                            label { display:block; margin:0; }
-                            label span { color:#0F202E; display:block; font-weight:bold; margin:0 0 10px; }
-                            label span span { display:inline; font-weight:normal; margin:0; }
+                label { display:block; margin:0; }
+                label span { color:#0F202E; display:block; font-weight:bold; margin:0 0 10px; }
+                label span span { display:inline; font-weight:normal; margin:0; }
 
-                            select {
-                                appearance:none;
-                                background: #dfe6ea;
-                                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%230071B1'%3E%3Cpolygon points='0,0 100,0 50,50'/%3E%3C/svg%3E%0A");
-                                background-repeat: no-repeat;
-                                background-position: 92%;
-                                background-position: calc(100% - 12px) 21px;
-                                background-size: 16px;
-                                border:0;
-                                color: #0f202e;
-                                font-size: 20px;
-                                height: 50px;
-                                line-height: 25px;
-                                padding: 12px 50px 12px 15px;
-                                width:100%; max-width:300px;
-                            }
-                            select:focus, .focus { border-radius:3px; box-shadow:0 0 0 3px #409ed4; outline:0; }
-
-
-                            #processNdvi, #processNdwi, #processNdsi{
-                                    display: block;
-                                    background-color: #025bee;
-                                    color: #ffffff;
-                                    font-size: 18px;
-                                    text-align: center;
-                                    width: 200px;
-                                    margin-top: 10px;
-                                    margin-left: 37%;
-                                    padding: 10px 0;
-                                    border-radius: 5px;
-                                    cursor: pointer;
-                             }
+                #processNdvi{
+                        display: block;
+                        background-color: #025bee;
+                        color: #ffffff;
+                        font-size: 18px;
+                        text-align: center;
+                        width: 200px;
+                        margin-top: 10px;
+                        margin-left: 37%;
+                        padding: 10px 0;
+                        border-radius: 5px;
+                        cursor: pointer;
+                 }
             </style>
     <!-- Bootstrap CSS -->
   </head>
-  <script type="text/javascript" src="/static/array.js"></script>
 <body>
   <main>
     <!--header-->
@@ -215,7 +131,7 @@
       <div >
         <div class="font d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start" style="margin-left: 15px;">
           <ul class="nav  col-lg-auto me-lg-auto  justify-content-center mb-md-0">
-            <li><h2 > ANTARIKCHYA </h2></li>
+            <li ><h2 > SATELLITE</h2></li>
           </ul>
           <div class=" text-end" style="margin-right: 15px;">
             <a href="/signin"><button type="button" class="btn" style="background: #545454; color: white;" >Sign-Out</button></a>
@@ -233,8 +149,16 @@
 		    <img src="static/Sanima.jpg" class="img-fluid" alt="Samina Bank">
       </div>
       <ul class="nav nav-pills flex-column mb-auto " id="navi" style=" color: #3a3a3a;">
+          <li>
+          <a class="nav-link text-white d-flex gap-3 align-items-center" id="timelapses" onclick="nextWind()" style="padding: 15px; ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hourglass-split" viewBox="0 0 16 16">
+                <path d="M2.5 15a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11zm2-13v1c0 .537.12 1.045.337 1.5h6.326c.216-.455.337-.963.337-1.5V2h-7zm3 6.35c0 .701-.478 1.236-1.011 1.492A3.5 3.5 0 0 0 4.5 13s.866-1.299 3-1.48V8.35zm1 0v3.17c2.134.181 3 1.48 3 1.48a3.5 3.5 0 0 0-1.989-3.158C8.978 9.586 8.5 9.052 8.5 8.351z"/>
+              </svg>
+            Timelapses
+          </a>
+        </li>
         <li class="nav-item" >
-          <a  class="nav-link d-flex gap-3 align-items-center text-white "  onclick="func()" aria-current="page" style="padding: 15px; border-radius: 0px;">
+          <a  class="nav-link d-flex gap-3 align-items-center text-white " id="upload"  onclick="func()" aria-current="page" style="padding: 15px; border-radius: 0px;">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-upload" viewBox="0 0 16 16">
               <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
               <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
@@ -242,23 +166,11 @@
             Upload
           </a>
         </li>
-        <li>
-          <a class="nav-link text-white d-flex gap-3 align-items-center" id="upload" style="padding: 15px; ">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock-history" viewBox="0 0 16 16">
-              <path d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022l-.074.997zm2.004.45a7.003 7.003 0 0 0-.985-.299l.219-.976c.383.086.76.2 1.126.342l-.36.933zm1.37.71a7.01 7.01 0 0 0-.439-.27l.493-.87a8.025 8.025 0 0 1 .979.654l-.615.789a6.996 6.996 0 0 0-.418-.302zm1.834 1.79a6.99 6.99 0 0 0-.653-.796l.724-.69c.27.285.52.59.747.91l-.818.576zm.744 1.352a7.08 7.08 0 0 0-.214-.468l.893-.45a7.976 7.976 0 0 1 .45 1.088l-.95.313a7.023 7.023 0 0 0-.179-.483zm.53 2.507a6.991 6.991 0 0 0-.1-1.025l.985-.17c.067.386.106.778.116 1.17l-1 .025zm-.131 1.538c.033-.17.06-.339.081-.51l.993.123a7.957 7.957 0 0 1-.23 1.155l-.964-.267c.046-.165.086-.332.12-.501zm-.952 2.379c.184-.29.346-.594.486-.908l.914.405c-.16.36-.345.706-.555 1.038l-.845-.535zm-.964 1.205c.122-.122.239-.248.35-.378l.758.653a8.073 8.073 0 0 1-.401.432l-.707-.707z"/>
-              <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0v1z"/>
-              <path d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z"/>
-            </svg>
-            History
-          </a>
-        </li>
       </ul>
     </div>
 
     <div  style="height: 100%; float:left; width:85%" >
-      <!--This is for Tribhuwan International Airport which is in new.html-->
-      <!--This displays map.hmtl image in index page-->
-      <iframe src="/map" height="100%" width="100%"></iframe>
+      <!--This display image in index page-->
     </div>
 
   <!--Multiple images upload-->
@@ -286,27 +198,12 @@
            <img src="/static/Results/NDVI.png" style="width:70vh; height:70vh;"/>
         </div>
       </div>
-      <!--Choose Filter-->
-         <label id="filter">
-             <select id="selectA" onclick="ndvi()">
-                <option disabled selected>Please select Filter</option>
-                <option value="ndv">NDVI</option>
-                <option value="ndw" >NDWI</option>
-                <option value="nds" >NDSI</option>
-            </select>
-        </label>
             <div>
-                <input type="button" value="Process NDVI" id="processNdvi" onclick="filterNdvi()" style="display:none">
-                <input type="button" value="Process NDWI" id="processNdwi" onclick="filterNdvi()" style="display:none">
-                <input type="button" value="Process NDSI" id="processNdsi" onclick="filterNdvi()" style="display:none">
+                <input type="button" value="Process NDVI" id="processNdvi" onclick="filterNdvi()">
             </div>
     </div>
-
-
 </body>
 <script>
-
-
 //Upload and Display image javascript function
 let fileInput = document.getElementById("file-input");
 let imageContainer = document.getElementById("images");
@@ -331,33 +228,13 @@ function preview(){
     }
 
 }
-
-
-           function ndvi() {
-            var x = document.getElementById("selectA").value;
-            if (x == "ndv") {
-
-              document.getElementById('processNdvi').style.display = "block";
-              document.getElementById('processNdwi').style.display = "none";
-              document.getElementById('processNdsi').style.display = "none";
-            }else if (x == "ndw") {
-              document.getElementById('processNdvi').style.display = "none";
-              document.getElementById('processNdwi').style.display = "block";
-              document.getElementById('processNdsi').style.display = "none";
-            } else if (x == "nds") {
-              document.getElementById('processNdvi').style.display = "none";
-              document.getElementById('processNdwi').style.display = "none";
-              document.getElementById('processNdsi').style.display = "block";
-            }
-           };
-
-
+            //display ndvi
             function filterNdvi() {
             var x = document.getElementById("ndvii");
             if (x.style.display === "none") {
               x.style.display = "block";
             } else {
-            x.style.display = "none";
+            x.style.display = "block";
             }
            };
 
@@ -370,7 +247,6 @@ function preview(){
             x.style.display = "none";
             }
             };
-
 
             //Upload process javascript function
             function process() {
@@ -402,7 +278,6 @@ function preview(){
             }
            };
 
+            function nextWind(){};
 </script>
-
-
 </html>
