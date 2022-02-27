@@ -1,2 +1,6 @@
 venv/
 env/
+temp/
+static/ignore/
+upload/
+.idea/

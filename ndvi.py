@@ -4,6 +4,11 @@ import earthpy.plot as ep
 import rasterio as rio
 import matplotlib.pyplot as plt
 import numpy as np
+class ndvi:
+        def __init__(self, landsat, data):
+            self.landsat = landsat
+            self.data = data
+
 
 landsat = 'static/Temp/*.tiff'
 data = glob.glob(landsat)
