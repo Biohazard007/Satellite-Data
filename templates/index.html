@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container" style="display: none;" id="container1">
-  <input type="file" id="file-input" onchange="preview()" multiple>
-  <label for="file-input" id="label">
-    Choose A Photo
-  </label>
-    <form class="grid" action="/result" method="POST">
-      <input type="button" id="script" name="script-button" value="Process Image" class="file_submit" onclick="process()" style="float:right;">
-    </form>
-  <p id="num-of-files">No Files Chosen</p>
-  <div id="images"></div>
+<div class="container">
+  <a href="http://127.0.0.1:5000/signin"> signin</a>
+    <div class="banner ">
+        <div class="font">
+
+            <img class="mb-4" src="../static/MicrosoftTeams-image.png" style=" margin-left:45%; margin-top:15%" width="275" height="275">
+
+                 <h1 style="color:white; position:absolute; margin-left:47.5%" >   ANTARIKCHYA</h1>
+        </div>
+
+    </div>
+
 </div>
 {% endblock %}

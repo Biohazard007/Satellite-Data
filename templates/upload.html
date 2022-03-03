@@ -1,8 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container" id="container1">
-    <div>
-        Upload
-    </div>
+<div class="container">
+  <input type="file" id="file-input" onchange="preview()" multiple>
+  <label for="file-input" id="label">
+    Choose A Photo
+  </label>
+    <form class="grid" action="/result" method="POST">
+      <input type="button" id="script" name="script-button" value="Process Image" class="file_submit" onclick="process()" style="float:right;">
+    </form>
+  <p id="num-of-files">No Files Chosen</p>
+  <div id="images"></div>
 </div>
 {% endblock %}
