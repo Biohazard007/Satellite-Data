@@ -1,10 +1,11 @@
+import imp
 from flask import Flask, redirect, render_template, send_from_directory, request
 import geemap.foliumap as geemap
 import ee
 import os
 import geopandas as gpd
 import uuid
-
+from ndvi import ndvi
 
 try:
     ee.Initialize()
@@ -146,7 +147,7 @@ def geotogif():
 
 
 @app.route('/upload-geojson', methods=['POST'])
-def upload():
+def upload_geo():
     rand_name = uuid.uuid4()
     m = geemap.Map(
         basemap="HYBRID",
@@ -166,7 +167,7 @@ def upload():
         'file': f'{rand_name}'
     }
 
-@app.route('/result', methods=['POST'])
+@app.route('/upload', methods=['POST'])
 def handle_upload_image():
     if 'files[]' not in request.files:
         return redirect('/upload')
@@ -174,9 +175,14 @@ def handle_upload_image():
     file_names = []
     for file in files:
         filename =  f'{uuid.uuid4()}.tiff'
-        file_names.append(filename)
+        file_names.append(f'static/ignore/{filename}')
         file.save(f'static/ignore/{filename}')
-    return render_template('upload.html', filenames=file_names)
+
+    result = ndvi(file_names)
+    for file in file_names:
+        if os.path.exists(file):
+            os.remove(file)
+    return render_template('upload.html', filenames=result)
 
 
 

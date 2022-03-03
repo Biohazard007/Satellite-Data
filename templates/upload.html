@@ -1,14 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container">
-  <input type="file" id="file-input" onchange="preview()" multiple>
-  <label for="file-input" id="label">
-    Choose A Photo
-  </label>
-    <form class="grid" action="/result" method="POST">
-      <input type="button" id="script" name="script-button" value="Process Image" class="file_submit" onclick="process()" style="float:right;">
+
+    <form class="grid" action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="file-input" id="label">
+            Choose Photos
+        </label>
+        <input type="file" name="files[]" id="file-input" onchange="preview()" multiple required>
+       <input type="submit" value="upload">
     </form>
-  <p id="num-of-files">No Files Chosen</p>
-  <div id="images"></div>
+    <p id="num-of-files"></p>
+    <div id="images">
+        {%for file in filenames%}
+        <img src="{{ file }}"> <br>
+        {%endfor%}
+    </div>
 </div>
 {% endblock %}
