@@ -1,29 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container" id="container1">
-    <input id="upload_geojson" style="display: block;" name="uploaded_file" type="file" />
+    <input id="upload_geojson" style="display: block; margin-bottom: 15px;" name="uploaded_file" type="file" />
 <iframe style="width: 100%; height: 500px" id="geojsonframe" src="/static/ignore/{{map}}">
 </iframe>
 <div>
   <form id="data-to-gif">
-    <select name="collection">
-      <option disabled selected>Select a satellite image collection</option>
+    <select name="collection" style="height:50px; width: 100%; margin-top: 15px; background-color: rgb(216, 216, 216); color: rgb(24, 24, 24);">
+      <option disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;Select a satellite image collection</option>
       <option value="landsat">Landsat TM-ETM-OLI Surface Reflectance</option>
       <option value="sentinel">Sentinel-2 MSI Surface Reflectance</option>
     </select>
-    <select name="bands">
-      <option disabled selected>Bands</option>
+    <select name="bands" style="height:50px; width: 100%; margin-top: 15px; background-color: rgb(216, 216, 216); color: rgb(24, 24, 24);">
+      <option disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;Bands</option>
       <option value="Red/Green/Blue">RGB</option>
       <option value="SWIR2/NIR/Green">SWIR2/NIR/Green</option>
     </select>
-    <select name="frequency">
-      <option disabled selected>Frequency</option>
+    <select name="frequency" style="height:50px; width: 100%; margin-top: 15px; background-color: rgb(216, 216, 216); color: rgb(24, 24, 24);">
+      <option disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;Frequency</option>
       <option value="year">Year</option>
       <option value="month">Month</option>
     </select>
-    <input type="number" name="start_date" placeholder="Start Date"/>
-    <input type="number" name="end_date" placeholder="End Date"/>
-    <button type="submit">Submit</button>
+    <input type="number" name="start_date" placeholder="Start Date" style=" height:50px; width: 30%; margin-top: 15px; background-color: rgb(216, 216, 216); color: rgb(24, 24, 24);"/>
+    <input type="number" name="end_date" placeholder="End Date" style=" height:50px; width: 30%; margin-left: 10px; margin-top: 15px; background-color: rgb(216, 216, 216); color: rgb(24, 24, 24);"/>
+  </br>
+    <button type="submit" style=" background-color: #025bee; color: #ffffff; font-size: 18px; text-align: center; width: 300px; padding: 18px 0; border-radius: 5px; cursor: pointer; margin-top:15px;">Submit</button>
   </form>
 </div>
 </div>
