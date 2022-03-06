@@ -47,6 +47,10 @@ def send_js(path):
 def login():
     return render_template('index.html')
 
+@app.route("/open")
+def open():
+    return render_template('open.html')
+
 
 @app.route("/signin")
 def signin():
