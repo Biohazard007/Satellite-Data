@@ -42,24 +42,13 @@ app = Flask(__name__, static_folder='./static')
 def send_js(path):
     return send_from_directory(path)
 
-
 @app.route("/")
-def login():
-    return render_template('index.html')
-
-@app.route("/open")
 def open():
     return render_template('open.html')
 
-
-@app.route("/signin")
-def signin():
-    return render_template('signin.html')
-
-
-@app.route("/signup")
-def signup():
-    return render_template('signup.html')
+@app.route("/index")
+def login():
+    return render_template('index.html')
 
 @app.route("/upload")
 def upload_page():

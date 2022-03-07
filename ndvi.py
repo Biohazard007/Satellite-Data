@@ -91,4 +91,4 @@ def ndvi(files_path):
 
     plt.savefig('static/Results/ndvi.png')
 
-    return ["static/Results/RBG.png","static/Results/ndvi.png","static/Results/False_Color.png"]
+    return ["static/Results/RBG.png","static/Results/False_Color.png", "static/Results/ndvi.png"]
