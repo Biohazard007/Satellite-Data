@@ -17,10 +17,8 @@
             <style>
 
               .font{
-                    font-family: 'Cornerstone';
-                    src: url('Cornerstone.woff2') format('woff2'),
-                   url('Cornerstone.woff') format('woff');
-                    font-weight: normal;
+                    font-family: 'ROBOTO';
+                    font-weight: BOLD;
                      font-style: normal;
                   font-display: swap;
 
@@ -32,23 +30,12 @@
                 }
 
                 .container{
-                            background-color: #525252;
+                            background-color: #212529;
                             width: 80%;
                             min-width: 450px;
                             position: absolute;
                             margin-left:  17%;
-                            margin-top: 1%;
-                            padding: 50px 20px;
-                            border-radius: 7px;
-                            box-shadow: 0 20px 35px rgba(0,0,0,0.05);
-                            }
-
-                #results{
-                            background-color: #ffffff;
-                            width: auto;
-                            position: absolute;
-                            margin-left: 20%;
-                            margin-top: 1%;
+                            margin-top: 3%;
                             padding: 50px 20px;
                             border-radius: 7px;
                             box-shadow: 0 20px 35px rgba(0,0,0,0.05);
@@ -59,10 +46,10 @@
                  #label{
                         display: block;
                         background-color: #025bee;
-                        color: #000000;
+                        color: #f5f5f5;
                         font-size: 18px;
                         text-align: center;
-                        width: 300px;
+                        width: 290px;
                         padding: 18px 0;
                         border-radius: 5px;
                         cursor: pointer;
@@ -95,24 +82,23 @@
                 label { display:block; margin:0; }
                 label span { color:#0F202E; display:block; font-weight:bold; margin:0 0 10px; }
                 label span span { display:inline; font-weight:normal; margin:0; }
-
-                #processNdvi{
-                        display: block;
+                
+                .button{
                         background-color: #025bee;
-                        color: #ffffff;
+                        border-color: #025bee;
+                        color: #f1f1f1;
                         font-size: 18px;
                         text-align: center;
-                        width: 200px;
-                        margin-top: 10px;
-                        margin-left: 37%;
-                        padding: 10px 0;
+                        width: 290px;
+                        padding: 17px 0;
                         border-radius: 5px;
                         cursor: pointer;
-                 }
+                  }
+
             </style>
     <!-- Bootstrap CSS -->
   </head>
-<body>
+<body style="background-image: url(/static/NASA.jpg); background-size: cover;">
   <main>
     <!--header-->
     <div class="b-example-divider"></div>
@@ -120,11 +106,8 @@
       <div >
         <div class="font d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start" style="margin-left: 15px;">
           <ul class="nav  col-lg-auto me-lg-auto  justify-content-center mb-md-0">
-            <li ><h2 > SATELLITE</h2></li>
+            <li ><h2 >SATELLITE IMAGE VISUALIZATION</h2></li>
           </ul>
-          <div class=" text-end" style="margin-right: 15px;">
-            <a href="/signin"><button type="button" class="btn" style="background: #545454; color: white;" >Sign-Out</button></a>
-          </div>
         </div>
       </div>
   </header>
@@ -135,7 +118,7 @@
     <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <div class="   text-white bg-dark" style="width: 15%; height: 100vh; float:left;">
       <div class="w-100 " >
-		    <img src="static/Sanima.jpg" class="img-fluid" alt="Samina Bank">
+		    <img src="static/kathford-logo.png" class="img-fluid" alt="Kathford College">
       </div>
       <ul class="nav nav-pills flex-column mb-auto " id="navi" style=" color: #3a3a3a;">
           <li>
@@ -198,28 +181,5 @@ function preview(){
             }
            };
 
-            //Upload rgb image display function
-            function rgb() {
-            var x = document.getElementById("results");
-            if (x.style.display === "none") {
-              x.style.display = "block";
-            } else {
-            x.style.display = "none";
-            }
-            };
-
-            //Upload main javascript function
-            function func() {
-            var x = document.getElementById("container1");
-            if (x.style.display === "none") {
-              x.style.display = "block";
-            } else {
-            x.style.display = "none";
-            }
-            var y = document.getElementById("results");
-            if (y.style.display === "block") {
-              y.style.display = "none";
-            }
-           };
 </script>
 </html>

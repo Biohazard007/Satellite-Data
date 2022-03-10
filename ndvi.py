@@ -105,7 +105,5 @@ def ndvi(files_path):
     plt.tight_layout()
     plt.savefig('static/Results/ndvi.png')
     plt.close()
-
-    
-
     return ["static/Results/RBG.png","static/Results/False_Color.png", "static/Results/ndvi.png","static/Results/result_ndvi.png"]
+
