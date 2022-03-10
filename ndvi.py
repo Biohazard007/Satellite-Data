@@ -5,8 +5,7 @@
 import rasterio as rio
 from rasterio import plot
 import matplotlib.pyplot as plt
-import numpy as np
-import glob
+import numpy as np  
 from matplotlib.colors import ListedColormap
 import earthpy.plot as ep
 
@@ -21,7 +20,8 @@ def ndvi(files_path):
                 rgb=(2, 1, 0),
                 stretch=True,
                 str_clip=0.2,
-                figsize=(10, 16)).figure
+                figsize=(10, 16),
+                title="True Color Image").figure
 
 
     fig1.savefig("static/Results/RBG.png")
@@ -30,7 +30,8 @@ def ndvi(files_path):
                 rgb=(3, 2, 1),
                 stretch=True,
                 str_clip=0.2,
-                figsize=(10, 16)).figure
+                figsize=(10, 16),
+                title="False Color Image").figure
     fig2.savefig("static/Results/False_Color.png")
 
     red = l[2].astype('float64')
@@ -42,8 +43,24 @@ def ndvi(files_path):
         (nir - red)/(nir + red)
     )
 
+    remove_bg = ndvi[(ndvi<0) | (ndvi>0)]
+    average_ndvi = np.sum(remove_bg)/remove_bg.size
+    average_ndvi = round(average_ndvi, 2)
+    fig3 = plt.figure()
+    plt.ylim([1,3])
+    plt.plot([-1, 1], [2, 2], color='blue', linewidth=3)
+    for i in np.arange(-1,1.1,0.1):
+        plt.plot([i, i], [1.98, 2.02], color='blue', linewidth=1.5)   
+    plt.scatter(average_ndvi, 2, s=200, color='red',alpha=1, zorder=3)
+    plt.text(-0.975, 2.5, 'NDVI Average: %.2f'%average_ndvi, color='blue', fontsize=30)
+    plt.text(-1.05, 1.8, '-1', color='blue', fontsize=15)
+    plt.text(0.9, 1.8, '+1', color='blue', fontsize=15)
+    plt.text(-0.025, 1.8, '0', color='blue', fontsize=15)
+    plt.axis('off')
+    plt.savefig("static/Results/result_ndvi.png")
 
-    ndvi_class_bins = [-1.0, -0.5, 0, 0.2, 0.4, 0.6, 0.8, 1.0]
+
+    ndvi_class_bins = [-1.0, -0.5, 0, 0.000000001, 0.2, 0.4, 0.6, 0.8, 1.0]
     ndvi_landsat_class = np.digitize(ndvi, ndvi_class_bins)
 
     # Apply the nodata mask to the newly classified NDVI data
@@ -53,42 +70,42 @@ def ndvi(files_path):
     np.unique(ndvi_landsat_class)
 
     # Define color map
-    # nbr_colors = ["#13128f", "#96601a", "#670f00", "#38bd09", "#013407"]
-    nbr_colors = ["#13128f", "#eab64f", "#926829", "#3e3117", "#38bd09", "#008b3a", "#013407"]
-    # nbr_colors = ["#13128f", "#96601a", "#670f00", "#38bd09", "#013407"]
+    nbr_colors = ["#13128f", "#3e3117", "#000000", "#926829", "#eab64f", "#0A8125", "#004610", "#013407"]
     nbr_cmap = ListedColormap(nbr_colors)
 
     # Define class names
     ndvi_cat_names = [
-        "Water Bodies",
-        "No Vegetation",
-        "Bare Area",
-        "Low Vegetation",
-        "Moderate Vegetation",
-        "Good Vegetation",
-        "High Vegetation",
+        "[-1, -0.5] Water Bodies",
+        "[-0.5, 0] No Vegetation",
+        "[0] Background",
+        "[0.01, 0.2] Bare Area",
+        "[0.2, 0.4] Low Vegetation",
+        "[0.4, 0.6] Moderate Vegetation",
+        "[0.6, 0.8] Good Vegetation",
+        "[0.8, 1.0] High Vegetation",
     ]
 
     # Get list of classes
     classes = np.unique(ndvi_landsat_class)
     classes = classes.tolist()
     # The mask returns a value of none in the classes. remove that
-    classes = classes[0:7]
+    classes = classes[0:8]
 
     # Plot your data
     fig, ax = plt.subplots(figsize=(12, 12))
     im = ax.imshow(ndvi_landsat_class, cmap=nbr_cmap)
-
     ep.draw_legend(im_ax=im, classes=classes, titles=ndvi_cat_names)
-    ax.set_title(
-        "Normalized Difference Vegetation Index (NDVI) Classes",
-        fontsize=14,
-    )
+    # ax.set_title(
+    #     "Normalized Difference Vegetation Index (NDVI) Visualization",
+    #     fontsize=15,
+    # )
+    plt.title("NDVI Classification", fontsize = 25)
     ax.set_axis_off()
-
     # Auto adjust subplot to fit figure size
     plt.tight_layout()
-
     plt.savefig('static/Results/ndvi.png')
+    plt.close()
 
-    return ["static/Results/RBG.png","static/Results/ndvi.png","static/Results/False_Color.png"]
+    
+
+    return ["static/Results/RBG.png","static/Results/False_Color.png", "static/Results/ndvi.png","static/Results/result_ndvi.png"]
