@@ -5,6 +5,7 @@
 import rasterio as rio
 from rasterio import plot
 import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
 import numpy as np  
 from matplotlib.colors import ListedColormap
 import earthpy.plot as ep
@@ -46,19 +47,33 @@ def ndvi(files_path):
     remove_bg = ndvi[(ndvi<0) | (ndvi>0)]
     average_ndvi = np.sum(remove_bg)/remove_bg.size
     average_ndvi = round(average_ndvi, 2)
-    fig3 = plt.figure()
-    plt.ylim([1,3])
-    plt.plot([-1, 1], [2, 2], color='blue', linewidth=3)
-    for i in np.arange(-1,1.1,0.1):
-        plt.plot([i, i], [1.98, 2.02], color='blue', linewidth=1.5)   
-    plt.scatter(average_ndvi, 2, s=200, color='red',alpha=1, zorder=3)
-    plt.text(-0.975, 2.5, 'NDVI Average: %.2f'%average_ndvi, color='blue', fontsize=30)
-    plt.text(-1.05, 1.8, '-1', color='blue', fontsize=15)
-    plt.text(0.9, 1.8, '+1', color='blue', fontsize=15)
-    plt.text(-0.025, 1.8, '0', color='blue', fontsize=15)
-    plt.axis('off')
-    plt.savefig("static/Results/result_ndvi.png")
 
+    def result():
+        fig3 = plt.figure()
+        plt.ylim([1,3])
+        plt.plot([-1, 1], [2, 2], color='black', linewidth=3)
+        for i in np.arange(-1,1.1,0.1):
+            plt.plot([i, i], [1.98, 2.02], color='black', linewidth=1.5)   
+        plt.scatter(average_ndvi, 2, s=200, color='green',alpha=1, zorder=3)
+        plt.text(-1, 2.5, 'NDVI Average: %.2f'%average_ndvi, color='blue', fontsize=30, fontfamily="serif")
+        plt.text(-1.05, 1.8, '-1', color='#13128f', fontsize=15)
+        plt.text(0.9, 1.8, '+1', color='#004610', fontsize=15)
+        plt.text(-0.025, 1.8, '0', color='#926829', fontsize=15)
+        plt.axis('off')
+        plt.savefig("static/Results/result_ndvi.png")
+        plt.close()
+    result()
+
+    fig4 = plt.figure(figsize=(10,7))
+    ax = fig4.add_subplot(1, 2, 1)
+    image1 = mpimg.imread("static/Results/result_ndvi.png")
+    imgplot = plt.imshow(image1)
+    plt.axis('off')
+    ax = fig4.add_subplot(1, 2, 2)
+    image2 = mpimg.imread("static/reference.jpg")
+    imgplot = plt.imshow(image2)
+    plt.axis('off')
+    plt.savefig("static/Results/result.png")
 
     ndvi_class_bins = [-1.0, -0.5, 0, 0.000000001, 0.2, 0.4, 0.6, 0.8, 1.0]
     ndvi_landsat_class = np.digitize(ndvi, ndvi_class_bins)
@@ -105,5 +120,5 @@ def ndvi(files_path):
     plt.tight_layout()
     plt.savefig('static/Results/ndvi.png')
     plt.close()
-    return ["static/Results/RBG.png","static/Results/False_Color.png", "static/Results/ndvi.png","static/Results/result_ndvi.png"]
+    return ["static/Results/RBG.png","static/Results/False_Color.png", "static/Results/ndvi.png","static/Results/result.png"]
 
